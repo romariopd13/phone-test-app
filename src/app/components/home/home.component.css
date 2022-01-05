@@ -1,0 +1,157 @@
+mat-sidenav{
+    width: 320px;
+}
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-header-image {
+    background-size: cover;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.profile-card {
+  /* text-align: center; */
+  padding: 15px;
+}
+.profile-card  img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+footer {
+  padding: 15px;
+  text-align: center;
+}
+/* .mat-expansion-panel-body{
+  padding: 0;
+} */
+/* .mat-expansion-panel-header-title, .mat-expansion-panel-header-description{
+  margin: 0;
+}
+.mat-expansion-panel-header{
+  padding: 0 20px 0 0;
+}
+.mat-accordion .mat-expansion-panel{
+  border-radius: 0;
+}
+.mat-expansion-panel-body {
+  padding: 0;
+} */
+
+::ng-deep.mat-menu-panel {
+  max-width: none !important;
+}
+::ng-deep.mat-menu-content:not(:empty){
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+
+.text-uppercase {
+    letter-spacing: 0.08em
+}
+
+.menu-fixo{
+  position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+}
+ul:first-child{
+    /* height: 4.375rem; */
+    display: flex;
+    align-items: center;
+    /* padding: 0 .75rem */
+} 
+.nav-link{
+  padding: 0;
+}
+.topbar .nav-item .nav-link .badge-counter {
+    position: absolute;
+    transform: scale(.7);
+    transform-origin: top right;
+    right: .25rem;
+    margin-top: -.25rem
+}
+/* 
+.topbar.navbar-light .navbar-nav .nav-item .nav-link {
+    color: #4aa28f
+} */
+
+.no-arrow .dropdown-toggle::after {
+    content: none !important
+}
+
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .35rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+.topbar .nav-item .nav-link .badge-counter {
+    position: absolute;
+    transform: scale(.7);
+    transform-origin: top right;
+    right: .25rem;
+    margin-top: -.25rem
+}
+
+.badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .35rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+.rounded-circle {
+    width: 40px;
+    height: 40px
+}
+
+.topbar .topbar-divider {
+    width: 0;
+    border-right: 1px solid #e3e6f0;
+    height: calc(4.375rem - 2rem);
+    margin: auto 1rem
+}
+
+.topbar .dropdown-list {
+    width: 20rem !important
+}
+
+.custom{
+  width: 375px;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-size: cover;
+}

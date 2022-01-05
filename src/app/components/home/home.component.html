@@ -1,0 +1,43 @@
+<mat-sidenav-container class="sidenav-container" fxFlexFill>
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+      <mat-toolbar style="height: auto; padding: 10px; background: white;">
+          <a href="javascript:void(0)" [routerLink]="['/home']"
+          style="font-weight: bold; text-decoration: none; margin: 0 auto;">{{title}}</a>
+      </mat-toolbar>
+      <mat-menu></mat-menu>
+      <mat-nav-list style="padding-top: 0;">
+        <mat-divider></mat-divider>
+        <button mat-menu-item routerLink="/">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item >
+          <mat-icon>account_circle</mat-icon>
+          <span>Telefones</span>
+        </button>
+        <mat-divider></mat-divider>
+        <footer>
+          <img src="../../../favicon.ico" alt="Icon" style="width: 32px;">
+          <p>&copy; Todos os direitos reservados.</p>
+        </footer>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span class="example-spacer"></span>
+        <a href="javascript:void(0)">
+          <img class="example-header-image"
+            src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" alt="">
+        </a>
+      </mat-toolbar>
+      
+      <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
