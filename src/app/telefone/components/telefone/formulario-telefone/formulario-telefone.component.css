@@ -1,0 +1,11 @@
+.titulo-painel {
+    border-bottom: 1px solid;
+}
+
+label{
+    font-weight: bold;
+}
+
+mat-form-field{
+    width: 100%;
+}

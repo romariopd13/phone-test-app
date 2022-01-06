@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -15,6 +15,24 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { TitlePageComponent } from './components/title-page/title-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { CurrencyMaskConfig, CURRENCY_MASK_CONFIG } from "ng2-currency-mask";
+import { registerLocaleData } from '@angular/common';
+import ptBr from '@angular/common/locales/pt';
+import { HttpClientModule } from '@angular/common/http';
+registerLocaleData(ptBr)
+
+export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
+  align: "right",
+  allowNegative: true,
+  decimal: ",",
+  precision: 2,
+  prefix: "R$ ",
+  suffix: "",
+  thousands: "."
+};
 
 const modules = [
   CommonModule,
@@ -31,7 +49,11 @@ const modules = [
   MatProgressBarModule,
   MatSidenavModule,
   MatToolbarModule,
-  
+  FormsModule,
+  ReactiveFormsModule,
+  NgxMaskModule.forRoot(),
+  CurrencyMaskModule,
+  HttpClientModule
 ];
 
 @NgModule({declarations: [
@@ -39,6 +61,9 @@ const modules = [
 ],
   imports: modules,
   exports: [modules, TitlePageComponent],
-  
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt' },
+    { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig }
+  ],
 })
 export class SharedModule { }

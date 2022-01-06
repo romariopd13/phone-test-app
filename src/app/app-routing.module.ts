@@ -6,7 +6,11 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {path: '', component: HomeComponent, children: [
-    {path: 'dashboard', component: DashboardComponent}
+    {path: 'dashboard', component: DashboardComponent},
+    {
+      path: 'telefones',
+      loadChildren: () => import('./telefone/telefone.module').then((m) => m.TelefoneModule)
+    }
   ]}
 ];
 

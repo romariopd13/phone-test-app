@@ -1,0 +1,50 @@
+<app-title-page titulo="Lista de Telefones"></app-title-page>
+<div class="row">
+    <div class="col-lg-6">
+        <button type="button" class="btn btn-primary" routerLink="/telefones/novo">Novo Telefone</button>
+
+    </div>
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="search" class="form-control"
+                placeholder="Pesquisar...">
+        </div>
+    </div>
+</div>
+<br>
+
+<div *ngIf="loading">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<mat-card class="table-responsive-vertical">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Number</th>
+            <th scope="col">Monthy Price</th>
+            <th scope="col">Setup Price</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tel of telefones">
+            <th>{{tel?.id}}</th>
+            <td>{{tel?.value}}</td>
+            <td>{{tel?.monthyPrice | currency: "BRL"}}</td>
+            <td>{{tel?.setupPrice | currency: "BRL"}}</td>
+            <td>
+                <a href="javascript:void(0)" [routerLink]="['/telefones/editar', tel.id]">
+                    <mat-icon aria-hidden="true" style="color: #f0ad4e;" aria-label="Example home icon">edit
+                    </mat-icon>
+                </a>
+                <a href="javascript:void(0)" (click)="destroyPhone(tel)">
+                    <mat-icon aria-hidden="true" style="color: #d9534f;" aria-label="Example home icon">delete
+                    </mat-icon>
+                </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</mat-card>
+<br>
